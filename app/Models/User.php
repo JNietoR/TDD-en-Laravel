@@ -57,4 +57,14 @@ class User extends Authenticatable
         ? 'Menor de edad'
         : $age;
     }
+    
+    public function setNameAttribute($name)
+    {
+        $this->attributes['name'] = strtolower($name);
+    }
+
+    public function setLastNameAttribute($lastname)
+    {
+        $this->attributes['lastname'] = strtolower($lastname);
+    }
 }
