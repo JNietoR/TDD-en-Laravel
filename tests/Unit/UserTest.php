@@ -25,4 +25,20 @@ class UserTest extends TestCase
 
         $this->assertEquals('jorge', $user->name);
     }
+    public function test_lastname_lowercase(): void
+    {
+        $user = new User;
+        $user->lastname = 'Nieto';
+
+        $this->assertEquals('nieto', $user->lastname);
+    }
+    public function test_fullname_uppercase(): void
+    {
+        $user = new User;
+        $user->name = 'Jorge';
+        $user->lastname = 'Nieto';
+
+        $this->assertEquals('JORGE NIETO', $user->fullname);
+    }
+    
 }
